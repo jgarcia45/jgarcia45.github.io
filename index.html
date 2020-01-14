@@ -10,12 +10,26 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <title>Juan Alfredo Garcia Jr.</title>
+
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <!--Get your own code at fontawesome.com-->
 </head>
 
 <body>
+
+  <!--Navbar-->
   <nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.html">Juan Garcia</a>
+    <a class="navbar-brand" href="index.html">
+      <img src="/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top"
+        alt="">
+      Garcia
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
       aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -30,6 +44,7 @@
     </div>
   </nav>
 
+  <!--Content-->
   <div class="jumbotron">
     <h1 class="display-4">Maintaince!</h1>
     <p class="lead">My website is under construction.</p>
@@ -37,6 +52,31 @@
     <p>However, you can see the temporary website that I have up.</p>
     <a class="btn btn-primary btn-lg" href="Azul/azul.html" role="button">Temporary Website</a>
   </div>
+
+  <!--Footer-->
+  <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-6 d-flex justify-content-start">
+          <!-- Copyright -->
+          <div class="footer-copyright text-center bg-transparent">© 2020 Copyright: Garcia
+          </div>
+          <!-- Copyright -->
+        </div>
+        <div class="col-md-6 d-flex justify-content-end">
+          <ul class="list-unstyled d-flex mb-0">
+            <li>
+              <a class="mr-3" role="button" href="https://www.linkedin.com/in/jgarcia45/"><i
+                  class="fab fa-linkedin-in"></i></a>
+            </li>
+            <li>
+              <a class="mr-3" role="button" href="https://github.com/jgarcia45"><i class="fab fa-github"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
