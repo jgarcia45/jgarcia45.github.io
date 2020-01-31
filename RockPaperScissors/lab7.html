@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <script type="text/javascript" src='lib.js'></script>
+    <script>
+        //Global variables --> exist until the page is closed
+        var hScore = 0; // human score
+        var cScore = 0; // computer score
+        var tScore = 0; // ties score
+
+        function play(weapon) {
+
+            var hChoice = weapon; // rock.jpg , paper.jpg , scissor.jpg
+            var cChoice;
+
+            // This sets pic for human
+            window.document.getElementById("hHand").src = hChoice;
+            /*  This is another way you can change the image
+                var human = window.document.getElementById('hHand');
+                changeImg(human, hChoice); // used by lib.js changeImg
+             */
+
+            // Need to set pic for computer
+
+            /*************************************************/
+            // Setup Computer's Hand
+            // 1) Get a random number between 1-3
+            // 2) if number is 1 set computer to rock  
+            // 3) if number is 2 set computer to paper
+            // 4) if number is 3 set computer to sissor
+
+            // 1)
+            var rand = Math.floor((Math.random() * 3) + 1); // ** Need to change
+            // this will get a number of 0 or 1        ** Need number 1-3
+
+            //--Used for debugging--rand sets computer weapon
+            //alert(rand);
+
+            // The following sets the weapon for the computer
+            // 2)
+            if (rand == 1) {
+                // set computer to rock
+                cChoice = "rock.jpg";
+            }
+
+            // 3)
+            else if (rand == 2) {
+                // set computer to paper
+                cChoice = "paper.jpg";
+            }
+            // 4)
+            else { // rand == 3
+                // set computer to scissor
+                cChoice = "scissor.jpg";
+            }
+
+            // change the src for the cHand img
+            window.document.getElementById("cHand").src = cChoice;
+
+            /*************************************************/
+            // DETERMINE OUTCOME OF GAME  --> user vs comp
+            //Now compare hChoice and cChoice to determine outcome
+            // use if, else if, else statements for logic
+
+            //human   computer
+            //rock vs rock
+            if (hChoice == "rock.jpg" && cChoice == "rock.jpg") {
+                alert("Draw");
+                tScore++;
+                //update page to show score
+                window.document.getElementById("tieScore").innerHTML = tScore;
+            }
+
+            //rock vs scissors 
+            else if (hChoice == "rock.jpg" && cChoice == "scissor.jpg") {
+                alert("You win!");
+                hScore++; // hScore = hScore + 1   
+                //update page to show score
+                window.document.getElementById("humanScore").innerHTML = hScore;
+            }
+
+            // rock vs paper 
+            else if (hChoice == "rock.jpg" && cChoice == "paper.jpg") {
+                alert("You lose!");
+                cScore++; // cScore = cScore + 1   
+                //update page to show score
+                window.document.getElementById("computerScore").innerHTML = cScore;
+            }
+            /*************************************************/
+            // Need to complete for paper vs (rock,scissor,paper) 
+            // and scissor vs (rock, scissor, paper)
+
+            /*************************************************/
+            //paper vs paper
+            if (hChoice == "paper.jpg" && cChoice == "paper.jpg") {
+                alert("Draw");
+                tScore++;
+                //update page to show score
+                window.document.getElementById("tieScore").innerHTML = tScore;
+            }
+
+            //paper vs scissors 
+            else if (hChoice == "paper.jpg" && cChoice == "scissor.jpg") {
+                alert("You lose!");
+                cScore++; // hScore = hScore + 1   
+                //update page to show score
+                window.document.getElementById("computerScore").innerHTML = cScore;
+            }
+
+            // paper vs rock 
+            else if (hChoice == "paper.jpg" && cChoice == "rock.jpg") {
+                alert("You win!");
+                hScore++; // cScore = cScore + 1   
+                //update page to show score
+                window.document.getElementById("humanScore").innerHTML = hScore;
+            }
+
+            //scissors vs scissors
+            if (hChoice == "scissor.jpg" && cChoice == "scissor.jpg") {
+                alert("Draw");
+                tScore++;
+                //update page to show score
+                window.document.getElementById("tieScore").innerHTML = tScore;
+            }
+
+            //scissors vs paper 
+            else if (hChoice == "scissor.jpg" && cChoice == "paper.jpg") {
+                alert("You win!");
+                hScore++; // hScore = hScore + 1   
+                //update page to show score
+                window.document.getElementById("humanScore").innerHTML = hScore;
+            }
+
+            // scissors vs rock 
+            else if (hChoice == "scissor.jpg" && cChoice == "rock.jpg") {
+                alert("You lose!");
+                cScore++; // cScore = cScore + 1   
+                //update page to show score
+                window.document.getElementById("computerScore").innerHTML = cScore;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <h3>Human</h3>
+    <img alt="" id="hHand" src="">
+    <br>
+    <input type="button" value="Rock" onClick=" play('rock.jpg'); ">
+    <input type="button" value="Paper" onClick=" play('paper.jpg'); ">
+    <input type="button" value="Scissor" onClick=" play('scissor.jpg'); ">
+    <h3>Computer</h3>
+    <img alt="" id="cHand" src="">
+    <br>
+    <!--Score area-->
+    <h3>Human Wins: </h3>
+    <h4 id="humanScore"> </h4>
+
+    <h3>Computer Wins: </h3>
+    <h4 id="computerScore"> </h4>
+
+    <h3>Ties: </h3>
+    <h4 id="tieScore"> </h4>
+
+    <input type='button' value='Clear' onclick=" cleargame(); ">
+    <br>
+    <a href="javascript:location.reload(true)">Reset Page</a>
+    <br>
+    <a href="../index.html">Back to Homepage</a>
+</body>
+
+</html>
