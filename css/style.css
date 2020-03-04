@@ -6,3 +6,9 @@
 .text-center {
   text-align: center;
 }
+
+.line-header {
+  border-color: rgba(0, 38, 255, 0.664);
+  width: 200px;
+  border-top: 2px solid  rgba(0, 38, 255, 0.664);
+}
