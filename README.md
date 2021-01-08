@@ -1,5 +1,4 @@
 # Personal Website
 
 ## Creating my website portfolio
-My old github domain name: https://jgarcia45.github.io/
-Change to: https://juanalfredogarciajr.com
+Previous Domain was: https://juanalfredogarciajr.com but was reverted back to https://jgarcia45.github.io/
